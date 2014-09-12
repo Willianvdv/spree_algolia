@@ -5,6 +5,8 @@ module Spree
 
         private
           def get_products_conditions_for(base_scope, query)
+            return base_scope if query.blank?
+
             Rails.logger.info { "Searching Algolia for: #{query}" }
             results = algolia_index.search(query, attributesToRetrieve=['objectID'])
             object_ids = results['hits'].map { |obj| obj['objectID'] }
