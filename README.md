@@ -23,7 +23,6 @@ end
 
 AlgoliaSearch.configuration = { application_id: 'APPLICATION_KEY',
                                 api_key: 'API_KEY' }
-
 ```
 
 To add extra fields to an Algolia document do:
@@ -34,7 +33,6 @@ Spree::Product.class_eval do
     add_attribute :fancy_field, :some_other_fancy_field
   end
 end
-
 ```
 
 ## Stuff
