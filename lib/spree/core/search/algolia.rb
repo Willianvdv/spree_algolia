@@ -20,6 +20,7 @@ module Spree
             # Prevent a sql injection via algolia
             objects_ids_as_string = ActiveRecord::Base::sanitize object_ids.join(',')
 
+            # Find the products in the scope and do a hackish order trick
             base_scope
               .where(id: object_ids)
               .order("position(spree_products.id::text in #{objects_ids_as_string})")
