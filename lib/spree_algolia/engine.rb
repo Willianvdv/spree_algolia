@@ -1,7 +1,9 @@
 require 'algoliasearch'
+require 'algoliasearch-rails'
 
 require 'spree/core/search/base'
 require 'spree/core/search/algolia'
+
 
 module SpreeAlgolia
   class Engine < Rails::Engine

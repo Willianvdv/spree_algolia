@@ -7,9 +7,14 @@ module Spree
           def get_products_conditions_for(base_scope, query)
             return base_scope if query.blank?
 
+            # I'm not using .algolia_search because that retuns an array instead
+            # of a scope. I didn't figured out yet why
+
             Rails.logger.info { "Searching Algolia for: #{query}" }
-            results = algolia_index.search(query, attributesToRetrieve=['objectID'])
+
+            results = base_scope.raw_search query
             object_ids = results['hits'].map { |obj| obj['objectID'] }
+
             Rails.logger.debug { "Algolia match for #{query}: #{object_ids}" }
 
             # Prevent a sql injection via algolia
