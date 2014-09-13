@@ -8,7 +8,6 @@ Add this gem to your Gemfile.
 
 ```
 gem 'spree_algolia', github: 'Willianvdv/spree_algolia'
-
 ```
 
 Now make an initializer to configure algolia:
