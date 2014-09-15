@@ -34,6 +34,12 @@ Spree::Product.class_eval do
 end
 ```
 
+To reindex all the products:
+
+```
+Spree::Product.reindex!
+```
+
 ## Stuff
 
 <3 Pull requests
