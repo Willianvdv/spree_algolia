@@ -1,6 +1,6 @@
 # Spree Algolia
 
-Work in progress.
+With this gem you can use Algolia (https://www.algolia.com/) as search engine.
 
 ## Install
 
@@ -42,4 +42,6 @@ Spree::Product.reindex!
 
 ## Stuff
 
-<3 Pull requests
+- I'm using Postgresql. I'm not sure the `position` query in the Algolia search class is going to work in other databases (https://github.com/Willianvdv/spree_algolia/blob/master/lib/spree/core/search/algolia.rb)
+- Typeahead support would be awesome. https://www.algolia.com/doc/tutorials/auto-complete
+- <3 Pull requests
